@@ -1,0 +1,42 @@
+# Caddy reverse proxy configuration for GojoXNG
+# Caddy automatically provisions and renews HTTPS certificates
+#
+# Install Caddy, then copy this file to /etc/caddy/Caddyfile
+# Replace gojoxng.example.com with your domain
+
+gojoxng.example.com {
+    encode gzip zstd
+
+    # Security headers
+    header {
+        Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+        X-Frame-Options SAMEORIGIN
+        X-Content-Type-Options nosniff
+        Referrer-Policy no-referrer
+        X-Robots-Tag "noindex, nofollow"
+        -Server
+    }
+
+    # Rate limiting (requires Caddy rate_limit module)
+    # rate_limit {
+    #     zone gojoxng {
+    #         events 30
+    #         window 1m
+    #     }
+    # }
+
+    # GojoXNG backend
+    reverse_proxy 127.0.0.1:8080 {
+        header_up Host {host}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto {scheme}
+    }
+
+    # Static file caching
+    @static path *.png *.jpg *.jpeg *.gif *.svg *.ico *.css *.js *.woff *.woff2
+    handle @static {
+        reverse_proxy 127.0.0.1:8080
+        header Cache-Control "public, max-age=2592000, immutable"
+    }
+}

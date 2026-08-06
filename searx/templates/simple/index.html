@@ -1,0 +1,11 @@
+{% extends "simple/base.html" %}
+{% from 'simple/icons.html' import icon_big %}
+{% block content %}
+<div class="index">
+    <div class="title">
+        <img class="gojoxng_logo" src="{{ url_for('static', filename='img/gojoxng-logo.png') }}" alt="GojoXNG logo" />
+        <h1>GojoXNG</h1>
+    </div>
+    {% include 'simple/simple_search.html' %}
+</div>
+{% endblock %}

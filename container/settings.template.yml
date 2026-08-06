@@ -1,0 +1,49 @@
+# GojoXNG settings template
+# Privacy-respecting metasearch engine based on SearXNG
+# License: AGPL-3.0-or-later
+
+use_default_settings: true
+
+general:
+  instance_name: "GojoXNG"
+  debug: false
+  privacypolicy_url: false
+  donation_url: false
+  contact_url: false
+  enable_metrics: false
+  open_metrics: ''
+
+server:
+  secret_key: "ultrasecretkey"
+  image_proxy: true
+  http_protocol_version: "1.1"
+  method: "POST"
+  public_instance: false
+  limiter: false
+  default_http_headers:
+    X-Content-Type-Options: nosniff
+    X-Download-Options: noopen
+    X-Robots-Tag: "noindex, nofollow"
+    Referrer-Policy: no-referrer
+    X-XSS-Protection: "1; mode=block"
+    X-Frame-Options: SAMEORIGIN
+    Permissions-Policy: "geolocation=(), camera=(), microphone=()"
+
+ui:
+  default_theme: simple
+  query_in_title: false
+  theme_args:
+    simple_style: auto
+  search_on_category_select: true
+  hotkeys: default
+  url_formatting: pretty
+
+search:
+  safe_search: 0
+  autocomplete: ""
+  default_lang: "auto"
+
+outgoing:
+  request_timeout: 3.0
+  useragent_suffix: ""
+  pool_connections: 100

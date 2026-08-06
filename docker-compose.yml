@@ -1,0 +1,54 @@
+# GojoXNG - Docker Compose deployment
+# Privacy-respecting metasearch engine based on SearXNG
+# License: AGPL-3.0-or-later
+#
+# Quick start:
+#   1. Copy .env.example to .env and edit values
+#   2. docker compose up -d --build
+#   3. Visit http://localhost:8080
+
+name: gojoxng
+
+services:
+  gojoxng:
+    container_name: gojoxng
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "${GOJOXNG_HOST:-127.0.0.1}:${GOJOXNG_PORT:-8080}:8080"
+    environment:
+      - SEARXNG_BASE_URL=${GOJOXNG_URL:-http://localhost:8080/}
+      - SEARXNG_SECRET=${GOJOXNG_SECRET:-}
+      - SEARXNG_PORT=8080
+      - SEARXNG_BIND_ADDRESS=0.0.0.0
+      - SEARXNG_VALKEY_URL=valkey://valkey:6379/0
+      - SEARXNG_LIMITER=${GOJOXNG_LIMITER:-false}
+      - SEARXNG_IMAGE_PROXY=true
+      - SEARXNG_METHOD=POST
+    volumes:
+      - ./config:/etc/searxng:Z
+      - gojoxng-data:/var/cache/searxng
+    depends_on:
+      - valkey
+    networks:
+      - gojoxng-net
+
+  valkey:
+    container_name: gojoxng-valkey
+    image: docker.io/valkey/valkey:8-alpine
+    command: valkey-server --save 30 1 --loglevel warning --maxmemory 256mb --maxmemory-policy allkeys-lru
+    restart: unless-stopped
+    volumes:
+      - valkey-data:/data
+    networks:
+      - gojoxng-net
+
+volumes:
+  gojoxng-data:
+  valkey-data:
+
+networks:
+  gojoxng-net:
+    driver: bridge

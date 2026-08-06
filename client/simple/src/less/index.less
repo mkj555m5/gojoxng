@@ -1,0 +1,72 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+#main_index {
+  margin-top: 26vh;
+}
+
+.index {
+  text-align: center;
+
+  .title {
+    min-height: 4rem;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+  }
+
+  .gojoxng_logo {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 0 24px rgba(72, 124, 255, 0.45);
+  }
+
+  h1 {
+    font-size: 4em;
+    visibility: visible;
+    color: #487cff;
+    letter-spacing: -0.02em;
+    margin: 0;
+    text-shadow: 0 0 18px rgba(72, 124, 255, 0.35);
+  }
+
+  #search,
+  #search_header {
+    margin: 0 auto;
+    background: inherit;
+    border: inherit;
+    padding: 0;
+    display: block;
+  }
+
+  .search_filters {
+    display: block;
+    margin: 1em 0;
+  }
+
+  .category label {
+    padding: 6px 10px;
+    border-bottom: initial !important;
+  }
+}
+
+@media screen and (max-width: @tablet) {
+  div.title {
+    h1 {
+      font-size: 2.5em;
+    }
+
+    .gojoxng_logo {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+
+  #main_index {
+    margin-top: 6em;
+  }
+}

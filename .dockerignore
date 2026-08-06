@@ -1,0 +1,22 @@
+# GojoXNG .dockerignore - files excluded from Docker build context
+.git
+.github
+.vscode
+.helix
+.devcontainer
+docs
+tests
+searxng_extra
+*.md
+*.rst
+!README.rst
+.gitignore
+.dockerignore
+.editorconfig
+.coveragerc
+.pylintrc
+pyrightconfig.json
+node_modules
+config/
+.env
+.env.example

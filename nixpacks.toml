@@ -1,0 +1,29 @@
+# Railway build configuration for GojoXNG
+# Uses Nixpacks (Railway's default build system)
+
+[phases.setup]
+nixPkgs = ["python312", "gcc", "libxml2-dev", "libxslt-dev", "zlib.dev", "libffi.dev", "openssl.dev"]
+nixOverlays = []
+aptPkgs = []
+
+[phases.install]
+cmds = [
+  "python -m venv /opt/venv",
+  "/opt/venv/bin/pip install --upgrade pip setuptools wheel",
+  "/opt/venv/bin/pip install -r requirements.txt",
+  "/opt/venv/bin/pip install granian[pname]==2.7.9"
+]
+
+[phases.build]
+cmds = [
+  "mkdir -p /etc/searxng /var/cache/searxng"
+]
+
+[start]
+cmd = "/opt/venv/bin/granian searx.webapp:app --host 0.0.0.0 --port ${PORT:-8080} --interface wsgi"
+
+[variables]
+PYTHONUNBUFFERED = "1"
+PYTHONDONTWRITEBYTECODE = "1"
+SEARXNG_SETTINGS_PATH = "/app/searx/settings.yml"
+SEARXNG_BIND_ADDRESS = "0.0.0.0"

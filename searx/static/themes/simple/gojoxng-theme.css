@@ -1,0 +1,499 @@
+/* ============================================
+   GojoXNG - Premium Anime-Inspired Theme
+   Electric blue neon glow on deep space dark
+   ============================================ */
+
+/* ===== ROOT VARIABLES - Gojo Dark Neon Theme ===== */
+:root {
+  /* Base - Deep space dark */
+  --color-base-font: #e8ecff;
+  --color-base-font-rgb: 232, 236, 255;
+  --color-base-background: #0a0e1a;
+  --color-base-background-mobile: #0d1220;
+  --color-url-font: #5fc8ff;
+  --color-url-visited-font: #b388ff;
+
+  /* Header - Glassy dark */
+  --color-header-background: rgba(15, 22, 40, 0.85);
+  --color-header-border: rgba(95, 200, 255, 0.2);
+
+  /* Footer */
+  --color-footer-background: rgba(10, 14, 26, 0.9);
+  --color-footer-border: rgba(95, 200, 255, 0.15);
+
+  /* Sidebar */
+  --color-sidebar-border: rgba(95, 200, 255, 0.2);
+  --color-sidebar-font: #e8ecff;
+  --color-sidebar-background: rgba(15, 22, 40, 0.6);
+
+  /* BackToTop */
+  --color-backtotop-font: #5fc8ff;
+  --color-backtotop-border: rgba(95, 200, 255, 0.3);
+  --color-backtotop-background: rgba(15, 22, 40, 0.9);
+
+  /* Buttons - Electric blue */
+  --color-btn-background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+  --color-btn-font: #fff;
+  --color-show-btn-background: rgba(95, 200, 255, 0.15);
+  --color-show-btn-font: #5fc8ff;
+
+  /* Search Input - Neon glow */
+  --color-search-border: rgba(95, 200, 255, 0.4);
+  --color-search-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 102, 255, 0.15);
+  --color-search-background: rgba(15, 22, 40, 0.8);
+  --color-search-font: #e8ecff;
+  --color-search-background-hover: rgba(0, 102, 255, 0.3);
+
+  /* Modal Colors */
+  --color-error: #ff4757;
+  --color-error-background: rgba(255, 71, 87, 0.15);
+  --color-warning: #ffa502;
+  --color-warning-background: rgba(255, 165, 2, 0.15);
+  --color-success: #2ed573;
+  --color-success-background: rgba(46, 213, 115, 0.15);
+
+  /* Categories - Neon accent */
+  --color-categories-item-selected-font: #00d4ff;
+  --color-categories-item-border-selected: #00d4ff;
+
+  /* Autocomplete */
+  --color-autocomplete-font: #e8ecff;
+  --color-autocomplete-border: rgba(95, 200, 255, 0.3);
+  --color-autocomplete-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.2);
+  --color-autocomplete-background: rgba(15, 22, 40, 0.95);
+  --color-autocomplete-background-hover: rgba(0, 102, 255, 0.25);
+
+  /* Answer */
+  --color-answer-font: #e8ecff;
+  --color-answer-background: rgba(15, 22, 40, 0.6);
+  --color-result-keyvalue-col-table: rgba(15, 22, 40, 0.8);
+  --color-result-keyvalue-odd: rgba(15, 22, 40, 0.4);
+  --color-result-keyvalue-even: rgba(15, 22, 40, 0.6);
+
+  /* Results - Glass cards */
+  --color-result-background: rgba(20, 28, 48, 0.6);
+  --color-result-border: rgba(95, 200, 255, 0.15);
+  --color-result-url-font: #5fc8ff;
+  --color-result-vim-selected: rgba(0, 102, 255, 0.2);
+  --color-result-vim-arrow: #00d4ff;
+  --color-result-description-highlight-font: #00d4ff;
+  --color-result-link-font: #5fc8ff;
+  --color-result-link-font-highlight: #00d4ff;
+  --color-result-link-visited-font: #b388ff;
+  --color-result-publishdate-font: #7a85b8;
+  --color-result-engines-font: #5a6498;
+  --color-result-search-url-border: rgba(95, 200, 255, 0.2);
+  --color-result-search-url-font: #5fc8ff;
+
+  /* Images */
+  --color-result-image-span-font: #e8ecff;
+  --color-result-image-span-font-selected: #fff;
+  --color-result-image-background: rgba(20, 28, 48, 0.6);
+
+  /* Settings */
+  --color-settings-tr-hover: rgba(0, 102, 255, 0.15);
+  --color-settings-engine-description-font: #7a85b8;
+  --color-settings-table-group-background: rgba(0, 102, 255, 0.1);
+
+  /* Detail modal */
+  --color-result-detail-font: #e8ecff;
+  --color-result-detail-label-font: #7a85b8;
+  --color-result-detail-background: rgba(10, 14, 26, 0.98);
+  --color-result-detail-border: rgba(95, 200, 255, 0.3);
+  --color-result-detail-hover: rgba(0, 102, 255, 0.2);
+
+  /* Loader */
+  --color-loader-border: rgba(95, 200, 255, 0.2);
+  --color-loader-borderleft: #00d4ff;
+
+  /* Categories */
+  --color-categories-item-font: #7a85b8;
+  --color-categories-item-border: rgba(95, 200, 255, 0.15);
+  --color-categories-item-background: rgba(20, 28, 48, 0.5);
+  --color-categories-item-background-hover: rgba(0, 102, 255, 0.2);
+  --color-categories-item-selected-font: #00d4ff;
+  --color-categories-item-selected-background: rgba(0, 102, 255, 0.15);
+
+  /* Code */
+  --color-code-background: rgba(0, 0, 0, 0.4);
+}
+
+/* ===== DARK THEME OVERRIDE (default for GojoXNG) ===== */
+.theme-dark,
+.theme-black,
+.theme-auto {
+  --color-base-font: #e8ecff;
+  --color-base-background: #0a0e1a;
+  --color-header-background: rgba(15, 22, 40, 0.85);
+  --color-footer-background: rgba(10, 14, 26, 0.9);
+  --color-sidebar-background: rgba(15, 22, 40, 0.6);
+  --color-search-background: rgba(15, 22, 40, 0.8);
+  --color-result-background: rgba(20, 28, 48, 0.6);
+}
+
+/* ===== BLACK THEME ===== */
+.theme-black {
+  --color-base-background: #000;
+  --color-base-background-mobile: #050810;
+  --color-header-background: rgba(0, 0, 0, 0.9);
+  --color-result-background: rgba(10, 14, 26, 0.8);
+}
+
+/* ===== GLOBAL BACKGROUND WITH ANIME AURA ===== */
+body {
+  background: #0a0e1a !important;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 102, 255, 0.25), transparent),
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(179, 136, 255, 0.12), transparent),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(0, 212, 255, 0.1), transparent) !important;
+  background-attachment: fixed !important;
+  color: #e8ecff !important;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+}
+
+/* ===== INDEX PAGE - LOGO + TITLE WITH NEON GLOW ===== */
+.index .title {
+  min-height: 4rem;
+  margin: 4rem auto 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.index .gojoxng_logo {
+  width: 5.5rem;
+  height: 5.5rem;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow:
+    0 0 30px rgba(0, 212, 255, 0.6),
+    0 0 60px rgba(0, 102, 255, 0.4),
+    0 0 90px rgba(179, 136, 255, 0.2);
+  animation: gojoPulse 3s ease-in-out infinite;
+  border: 2px solid rgba(0, 212, 255, 0.5);
+}
+
+@keyframes gojoPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 30px rgba(0, 212, 255, 0.6),
+      0 0 60px rgba(0, 102, 255, 0.4),
+      0 0 90px rgba(179, 136, 255, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 40px rgba(0, 212, 255, 0.8),
+      0 0 80px rgba(0, 102, 255, 0.6),
+      0 0 120px rgba(179, 136, 255, 0.4);
+  }
+}
+
+.index h1 {
+  font-size: 4.5em !important;
+  visibility: visible !important;
+  background: linear-gradient(135deg, #00d4ff 0%, #5fc8ff 50%, #b388ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.03em;
+  margin: 0 !important;
+  font-weight: 800 !important;
+  text-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+  filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.4));
+}
+
+/* ===== SEARCH BOX - NEON GLOW ===== */
+#search_view .search_box,
+#search input[type="text"],
+#q {
+  background: rgba(15, 22, 40, 0.8) !important;
+  border: 1px solid rgba(95, 200, 255, 0.3) !important;
+  color: #e8ecff !important;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15) !important;
+  transition: all 0.3s ease !important;
+}
+
+#search_view .search_box:focus-within,
+#q:focus {
+  border-color: rgba(0, 212, 255, 0.8) !important;
+  box-shadow:
+    0 0 20px rgba(0, 212, 255, 0.4),
+    0 0 40px rgba(0, 102, 255, 0.2) !important;
+  outline: none !important;
+}
+
+#send_search,
+button[type="submit"] {
+  background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+#send_search:hover,
+button[type="submit"]:hover {
+  box-shadow: 0 6px 30px rgba(0, 212, 255, 0.6) !important;
+  transform: translateY(-1px);
+}
+
+/* ===== SEARCH LOGO IN HEADER ===== */
+#search_logo .search_logo_img {
+  width: 42px !important;
+  height: 42px !important;
+  object-fit: contain;
+  border-radius: 50%;
+  margin: 0.3rem 0 auto 0;
+  box-shadow:
+    0 0 15px rgba(0, 212, 255, 0.6),
+    0 0 30px rgba(0, 102, 255, 0.3);
+  border: 1px solid rgba(0, 212, 255, 0.4);
+}
+
+/* ===== RESULT CARDS - GLASS MORPHISM ===== */
+.result,
+article.result {
+  background: rgba(20, 28, 48, 0.6) !important;
+  border: 1px solid rgba(95, 200, 255, 0.15) !important;
+  border-radius: 12px !important;
+  padding: 1.2rem 1.5rem !important;
+  margin: 0.8rem 0 !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease !important;
+}
+
+.result:hover,
+article.result:hover {
+  background: rgba(25, 35, 60, 0.8) !important;
+  border-color: rgba(0, 212, 255, 0.4) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 212, 255, 0.15) !important;
+  transform: translateY(-2px);
+}
+
+.result h3 a,
+.result_title a {
+  color: #5fc8ff !important;
+  font-weight: 600 !important;
+}
+
+.result h3 a:hover,
+.result_title a:hover {
+  color: #00d4ff !important;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.result .url,
+.result .url_wrapper a {
+  color: #7a85b8 !important;
+}
+
+.result p,
+.result .content {
+  color: #c0c8e8 !important;
+  line-height: 1.6 !important;
+}
+
+/* ===== CATEGORIES - NEON PILLS ===== */
+.category label {
+  background: rgba(20, 28, 48, 0.5) !important;
+  border: 1px solid rgba(95, 200, 255, 0.15) !important;
+  color: #7a85b8 !important;
+  border-radius: 20px !important;
+  padding: 6px 14px !important;
+  transition: all 0.3s ease !important;
+}
+
+.category label:hover {
+  background: rgba(0, 102, 255, 0.2) !important;
+  border-color: rgba(0, 212, 255, 0.4) !important;
+  color: #5fc8ff !important;
+}
+
+.category input[type="checkbox"]:checked + label,
+.category.active label {
+  background: rgba(0, 102, 255, 0.15) !important;
+  border-color: #00d4ff !important;
+  color: #00d4ff !important;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.4) !important;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0e1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #0066ff, #00d4ff);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #00d4ff, #5fc8ff);
+}
+
+/* ===== LINKS ===== */
+a {
+  color: #5fc8ff !important;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+a:hover {
+  color: #00d4ff !important;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+}
+
+/* ===== HEADER / FOOTER ===== */
+#links_on_top a,
+.link_on_top_about,
+.link_on_top_preferences {
+  color: #c0c8e8 !important;
+}
+
+#links_on_top a:hover {
+  color: #00d4ff !important;
+}
+
+footer,
+#footer {
+  background: rgba(10, 14, 26, 0.9) !important;
+  border-top: 1px solid rgba(95, 200, 255, 0.15) !important;
+  color: #7a85b8 !important;
+}
+
+footer a {
+  color: #5fc8ff !important;
+}
+
+/* ===== SIDEBAR / FILTERS ===== */
+.search_filters select,
+#time_range,
+#language,
+#safesearch {
+  background: rgba(15, 22, 40, 0.8) !important;
+  color: #e8ecff !important;
+  border: 1px solid rgba(95, 200, 255, 0.3) !important;
+  border-radius: 8px !important;
+  padding: 6px 10px !important;
+}
+
+.search_filters select option {
+  background: #0a0e1a !important;
+  color: #e8ecff !important;
+}
+
+/* ===== ERROR / WARNING MESSAGES ===== */
+.dialog-error,
+.dialog-warning {
+  background: rgba(255, 71, 87, 0.15) !important;
+  border: 1px solid rgba(255, 71, 87, 0.4) !important;
+  color: #ffb3ba !important;
+  border-radius: 8px !important;
+}
+
+/* ===== PREFERENCES PAGE ===== */
+#preferences {
+  background: transparent !important;
+}
+
+#preferences table {
+  background: rgba(20, 28, 48, 0.4) !important;
+}
+
+#preferences th,
+#preferences td {
+  border-color: rgba(95, 200, 255, 0.15) !important;
+  color: #e8ecff !important;
+}
+
+/* ===== LOADING SPINNER ===== */
+#loading,
+.loader {
+  border-color: rgba(95, 200, 255, 0.2) !important;
+  border-left-color: #00d4ff !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+  .index h1 {
+    font-size: 2.8em !important;
+  }
+  .index .gojoxng_logo {
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+  .result,
+  article.result {
+    padding: 1rem !important;
+    margin: 0.5rem 0 !important;
+  }
+}
+
+/* ===== ANIMATED BACKGROUND PARTICLES ===== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(0, 212, 255, 0.6), transparent),
+    radial-gradient(2px 2px at 60% 70%, rgba(179, 136, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(95, 200, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 80% 10%, rgba(0, 212, 255, 0.5), transparent),
+    radial-gradient(2px 2px at 90% 60%, rgba(179, 136, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 33% 80%, rgba(0, 212, 255, 0.6), transparent);
+  background-size: 200% 200%;
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.6;
+  animation: gojoStars 60s linear infinite;
+}
+
+@keyframes gojoStars {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* ===== PAGE TITLE / HEADER BAR ===== */
+#search_header {
+  background: rgba(15, 22, 40, 0.7) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(95, 200, 255, 0.2) !important;
+}
+
+/* ===== NO RESULTS ===== */
+#no_results {
+  background: rgba(20, 28, 48, 0.5) !important;
+  border: 1px solid rgba(95, 200, 255, 0.2) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  text-align: center;
+}
+
+#no_results h3 {
+  color: #5fc8ff !important;
+}
+
+/* ===== IMAGE RESULTS GRID ===== */
+#results.image-gallery,
+.image_result {
+  background: rgba(20, 28, 48, 0.4) !important;
+  border-radius: 8px !important;
+}
+
+/* ===== SELECTION HIGHLIGHT ===== */
+::selection {
+  background: rgba(0, 212, 255, 0.3) !important;
+  color: #fff !important;
+}
