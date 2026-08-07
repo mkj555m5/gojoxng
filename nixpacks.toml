@@ -8,11 +8,12 @@ aptPkgs = []
 
 [phases.install]
 cmds = [
-  "python -m venv /opt/venv",
+  "python3 -m venv /opt/venv",
   "/opt/venv/bin/pip install --upgrade pip setuptools wheel",
   "/opt/venv/bin/pip install -r requirements.txt",
   "/opt/venv/bin/pip install --no-deps --no-build-isolation .",
-  "/opt/venv/bin/pip install granian[pname]==2.7.9"
+  "/opt/venv/bin/pip install granian[pname]==2.7.9",
+  "/opt/venv/bin/python -c \"import granian; print('granian OK')\""
 ]
 
 [phases.build]
@@ -21,10 +22,11 @@ cmds = [
 ]
 
 [start]
-cmd = "/opt/venv/bin/granian searx.webapp:app --host 0.0.0.0 --port ${PORT:-8080} --interface wsgi"
+cmd = "/opt/venv/bin/python -m granian searx.webapp:app --host 0.0.0.0 --port ${PORT:-8080} --interface wsgi"
 
 [variables]
 PYTHONUNBUFFERED = "1"
 PYTHONDONTWRITEBYTECODE = "1"
+PATH = "/opt/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 SEARXNG_SETTINGS_PATH = "/app/searx/settings.yml"
 SEARXNG_BIND_ADDRESS = "0.0.0.0"
