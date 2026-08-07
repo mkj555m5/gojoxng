@@ -28,7 +28,8 @@ COPY . /usr/local/searxng/
 
 RUN python -m venv .venv \
     && .venv/bin/pip install --upgrade pip setuptools wheel \
-    && .venv/bin/pip install --no-cache-dir . \
+    && .venv/bin/pip install --no-cache-dir -r requirements.txt \
+    && .venv/bin/pip install --no-cache-dir --no-deps --no-build-isolation . \
     && .venv/bin/pip install --no-cache-dir granian[pname]==2.7.9
 
 # ---------- Runtime stage ----------
