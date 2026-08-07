@@ -1,0 +1,42 @@
+# Render Blueprint for GojoXNG
+# Privacy-respecting metasearch engine based on SearXNG
+# License: AGPL-3.0-or-later
+#
+# How to deploy:
+# 1. Go to https://render.com → New → Blueprint
+# 2. Select your GitHub repo: mkj555m5/gojoxng
+# 3. Render will detect this file automatically
+# 4. Set SEARXNG_SECRET in environment variables
+# 5. Deploy!
+
+services:
+  - type: web
+    name: gojoxng
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: |
+      pip install --upgrade pip setuptools wheel &&
+      pip install -r requirements.txt &&
+      pip install --no-deps --no-build-isolation . &&
+      pip install granian[pname]==2.7.9
+    startCommand: granian searx.webapp:app --host 0.0.0.0 --port $PORT --interface wsgi
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: SEARXNG_BIND_ADDRESS
+        value: 0.0.0.0
+      - key: SEARXNG_BASE_URL
+        sync: false  # Set after first deploy: https://gojoxng.onrender.com/
+      - key: SEARXNG_SECRET
+        generateValue: true  # Render generates a random secret automatically
+      - key: SEARXNG_IMAGE_PROXY
+        value: "true"
+      - key: SEARXNG_METHOD
+        value: POST
+      - key: SEARXNG_SETTINGS_PATH
+        value: /opt/render/project/src/searx/settings.yml
+      - key: PYTHONUNBUFFERED
+        value: "1"
